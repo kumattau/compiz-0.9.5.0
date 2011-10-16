@@ -20,6 +20,11 @@ emerald
 for debian_package in `echo ${pkglist}`
 do
 
+	if echo ${debian_package} | grep -Eq '^#'
+	then
+		continue
+	fi
+
         compiz_package=`echo ${debian_package} | sed 's/-fusion//g'`
         compiz_archive=${compiz_package}-${version}.tar.bz2
 
@@ -37,16 +42,9 @@ do
 				cd releases
 				wget ${siteurl}/${compiz_archive} || exit 1
 			else
-				rm -fr ${tempdir}
-				mkdir -p ${tempdir}
-				cd ${tempedir}
-				git clone git://anongit.compiz.org/fusion/decorators/${compiz_package} || exit 1
-				cd ${compiz_package}
-				git checkout 0.9.5
-				rm -fr .git*
-				cd ../
-				tar jcf ${compiz_archive} ${compiz_package}
-				mv ${compiz_archive} ${workdir}/releases/
+				cd releases
+				wget http://git.compiz.org/fusion/decorators/emerald/snapshot/emerald-0.9.5.tar.bz2 || exit 1
+				mv emerald-0.9.5.tar.bz2 ${compiz_archive}
 			fi
 		fi
 
@@ -84,4 +82,4 @@ rm -fr ${tempdir}
 cd ${workdir}
 sudo dpkg -i */*.deb
 
-sudo dpkg --purge compiz compiz-kde
+sudo dpkg --purge compiz-kde

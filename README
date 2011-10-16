@@ -8,7 +8,7 @@ $ ./INSTALL.sh
 
 - build compiz debian package
 - install built package
-- remove compiz, compiz-kde because of no compizconfig-backend-kconfig4
+- remove compiz-kde because of no compizconfig-backend-kconfig4
 
 $ ./UNINSTALL.sh
 
