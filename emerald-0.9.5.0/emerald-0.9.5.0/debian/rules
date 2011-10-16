@@ -1,0 +1,40 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/autotools.mk
+include /usr/share/cdbs/1/rules/patchsys-quilt.mk
+
+DEB_CONFIGURE_EXTRA_FLAGS :=			\
+	--disable-static			\
+	--disable-mime-update
+
+DEB_INSTALL_DIRS_emerald =			\
+	/usr/bin 				\
+	/usr/share
+
+DEB_INSTALL_DIRS_libemeraldengine0 = 		\
+	/usr/lib/				\
+	/usr/lib/emerald/engines	
+
+DEB_INSTALL_DIRS_libemeraldengine-dev =		\
+	/usr/include				\
+	/usr/lib/pkgconfig
+
+pre-build::
+	autoreconf -v --install
+	glib-gettextize --copy --force
+	intltoolize --automake --copy --force
+
+install/emerald::
+	cp -ar debian/tmp/usr/bin/* debian/emerald/usr/bin/
+	cp -ar debian/tmp/usr/share/* debian/emerald/usr/share/
+
+install/libemeraldengine0::
+	cp -ar debian/tmp/usr/lib/libemeraldengine.so.* debian/libemeraldengine0/usr/lib/
+	cp -ar debian/tmp/usr/lib/emerald/engines/*.so debian/libemeraldengine0/usr/lib/emerald/engines/
+
+install/libemeraldengine-dev::
+	cp -ar debian/tmp/usr/include/* debian/libemeraldengine-dev/usr/include/
+	cp -ar debian/tmp/usr/lib/pkgconfig/* debian/libemeraldengine-dev/usr/lib/pkgconfig/
+
+
