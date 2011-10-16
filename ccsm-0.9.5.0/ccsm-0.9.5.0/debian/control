@@ -12,7 +12,7 @@ Homepage: http://wiki.compiz.org/CCSM
 
 Package: compizconfig-settings-manager
 Architecture: all
-Depends: ${misc:Depends}, ${python:Depends}, librsvg2-common, python-compizconfig (>= 0.9.0), python-gtk2
+Depends: ${misc:Depends}, ${python:Depends}, librsvg2-common, python-compizconfig (>= 0.9.5.0), python-gtk2
 XB-Python-Version: ${python:Versions}
 Description: Compizconfig Settings Manager
  Compiz Fusion is the result of the re-unification of the Beryl-project

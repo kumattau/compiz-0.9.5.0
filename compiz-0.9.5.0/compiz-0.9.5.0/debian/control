@@ -7,7 +7,7 @@ Build-Depends: cmake (>= 2.6), debhelper (>= 7.0.50~), intltool, libtool,
  libcairo2-dev,
  libdbus-glib-1-dev, libgconf2-dev, 
  libgl1-mesa-dev (>= 6.5.1) | libgl-dev, libglib2.0-dev, libgnome-desktop-dev,
- libboost1.42-dev, libboost-serialization1.42-dev,
+ libboost-dev, libboost-serialization-dev,
  libglibmm-2.4-dev,
  libgnomeui-dev, 
  libgnome-window-settings-dev, libgtk2.0-dev, libice-dev (>= 1:1.0.1), 
@@ -95,7 +95,6 @@ Package: compiz-kde
 Architecture: any
 Depends: compiz-core (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends},
          compiz-plugins (= ${binary:Version}),
-         compizconfig-backend-kconfig4
 Description: OpenGL window and compositing manager - KDE window decorator
  Compiz brings to life a variety of visual effects that make the Linux desktop
  easier to use, more powerful and intuitive, and more accessible for users

@@ -3,7 +3,7 @@ Priority: extra
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Uploaders: Sean Finney <seanius@debian.org>
 Build-Depends: debhelper (>= 7.0.50~), cmake, intltool, pkg-config, libtool,
- compiz-dev (>= 0.9.0), libcompizconfig-dev (>= 0.9.0), libglib2.0-dev,
+ compiz-dev (>= 0.9.5.0), libcompizconfig-dev (>= 0.9.5.0), libglib2.0-dev,
  libgconf2-dev, libxslt1-dev, libxml2-dev
 Standards-Version: 3.9.1
 Section: x11
