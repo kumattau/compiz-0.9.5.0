@@ -6,8 +6,6 @@
 
 CORE_ABIVERSION := $(shell sed -rn 's/^\#define[[:space:]]+CORE_ABIVERSION[[:space:]]+//p' include/core/core.h )
 
-DEFAULT_PLUGINS = "core bailer detection composite opengl decor mousepoll vpswitch regex animation snap expo move compiztoolbox place grid gnomecompat wall ezoom workarounds staticswitcher resize fade scale session"
-
 %:
 	dh $@
 
@@ -17,8 +15,7 @@ clean:
 	rm -f po/compiz.pot
 
 override_dh_auto_configure:
-	# currently, segfault if CMAKE_BUILD_TYPE=Release
-	dh_auto_configure -- -DCOMPIZ_BUILD_WITH_RPATH=FALSE -DCOMPIZ_DEFAULT_PLUGINS=\"$(DEFAULT_PLUGINS)\" -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCOMPIZ_PACKAGING_ENABLED=TRUE
+	dh_auto_configure -- -DCOMPIZ_BUILD_WITH_RPATH=FALSE -DCOMPIZ_PACKAGING_ENABLED=TRUE
 
 override_dh_install:
 	# cmake findcompiz_install use COMPIZ_DESTDIR and using COMPIZ_DESTDIR and
