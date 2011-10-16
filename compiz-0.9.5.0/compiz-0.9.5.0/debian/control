@@ -95,6 +95,7 @@ Package: compiz-kde
 Architecture: any
 Depends: compiz-core (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends},
          compiz-plugins (= ${binary:Version}),
+         compizconfig-backend-kconfig4
 Description: OpenGL window and compositing manager - KDE window decorator
  Compiz brings to life a variety of visual effects that make the Linux desktop
  easier to use, more powerful and intuitive, and more accessible for users
