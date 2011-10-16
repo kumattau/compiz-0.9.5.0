@@ -1,3 +1,9 @@
+compizconfig-python (0.9.5.0-1) experimental; urgency=low
+
+  * New upstream release. 
+
+ -- kumattau <kumattau@gmail.com>  Sun, 16 Oct 2011 18:33:04 +0900
+
 compizconfig-python (0.9.2.1+git20110224.5ccb653e-1) experimental; urgency=low
 
   [ Janos Guljas ]
