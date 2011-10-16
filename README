@@ -1,0 +1,16 @@
+------------------------
+compiz build and install
+------------------------
+
+compiz-0.9.5.0 build and install on debian
+
+$ ./INSTALL.sh
+
+- build compiz debian package
+- install built package
+- remove compiz, compiz-kde because of no compizconfig-backend-kconfig4
+
+$ ./UNINSTALL.sh
+
+- remove compiz-0.9.5.0 package
+
